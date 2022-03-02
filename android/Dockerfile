@@ -1,4 +1,4 @@
-FROM ubuntu:12.04
+FROM ubuntu:latest
 
 ##############################
 # Download dependencies
@@ -18,7 +18,7 @@ RUN apt-get -y install --reinstall gcc
 RUN apt-get -y install --reinstall build-essential
 RUN dpkg-reconfigure build-essential
 RUN dpkg-reconfigure gcc
-RUN apt-get -y -f install ia32-libs
+RUN apt-get -y -f install lib32z1 lib32ncurses5 lib32bz2-1.0
 ##############################
 # Configuration
 ##############################
