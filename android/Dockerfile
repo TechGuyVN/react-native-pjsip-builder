@@ -18,7 +18,7 @@ RUN apt-get -y install --reinstall gcc
 RUN apt-get -y install --reinstall build-essential
 RUN dpkg-reconfigure build-essential
 RUN dpkg-reconfigure gcc
-RUN pt-get -y -f install ia32-libs
+RUN apt-get -y -f install ia32-libs
 ##############################
 # Configuration
 ##############################
