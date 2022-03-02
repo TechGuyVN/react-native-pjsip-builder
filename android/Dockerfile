@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.10
 
 ##############################
 # Download dependencies
