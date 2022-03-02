@@ -10,14 +10,12 @@ RUN dpkg --add-architecture i386 && \
     apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    software-properties-common git curl bzip2 gcc g++ binutils make autoconf openssl gobjc++ \
+    software-properties-common git curl bzip2 gcc-8 g++-8 binutils make autoconf openssl gobjc++ \
     libssl-dev ant libopus0 libpcre3 libpcre3-dev build-essential nasm libc6:i386 libstdc++6:i386 zlib1g:i386 \
     openjdk-8-jdk unzip
 
-RUN apt-get -y install --reinstall gcc
 RUN apt-get -y install --reinstall build-essential
 RUN dpkg-reconfigure build-essential
-RUN dpkg-reconfigure gcc
 RUN apt-get -y -f install  lib32ncurses5 lib32z1
 ##############################
 # Configuration
