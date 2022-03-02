@@ -10,9 +10,14 @@ RUN dpkg --add-architecture i386 && \
     apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    software-properties-common git curl bzip2 gcc g++ binutils make autoconf openssl \
+    software-properties-common git curl bzip2 gcc g++ binutils make autoconf openssl gobjc++ \
     libssl-dev ant libopus0 libpcre3 libpcre3-dev build-essential nasm libc6:i386 libstdc++6:i386 zlib1g:i386 \
     openjdk-8-jdk unzip
+
+RUN apt-get -y install --reinstall gcc
+RUN apt-get -y install --reinstall build-essential
+RUN dpkg-reconfigure build-essential
+RUN dpkg-reconfigure gcc
 
 ##############################
 # Configuration
@@ -35,7 +40,7 @@ ENV OPENSSL_DOWNLOAD_URL "https://www.openssl.org/source/openssl-1.0.2g.tar.gz"
 ENV OPENH264_DOWNLOAD_URL "https://github.com/cisco/openh264/archive/v1.7.0.tar.gz"
 ENV OPENH264_TARGET_NDK_LEVEL 23
 
-ENV OPUS_DOWNLOAD_URL "http://downloads.xiph.org/releases/opus/opus-1.2.1.tar.gz"
+ENV OPUS_DOWNLOAD_URL "https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.3.1.tar.gz"
 ENV OPUS_ANDROID_MK_DOWNLOAD_URL "https://trac.pjsip.org/repos/raw-attachment/ticket/1904/Android.mk"
 
 ENV PATH /sources/android_ndk:$PATH
