@@ -23,10 +23,10 @@ RUN apt-get -y -f install  lib32ncurses5 lib32z1
 
 # ENV TARGET_ARCHS "armeabi armeabi-v7a x86 mips arm64-v8a x86_64 mips64"
 ENV TARGET_ARCHS "armeabi-v7a x86 arm64-v8a x86_64" 
-ENV ANDROID_NDK_DOWNLOAD_URL "https://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip"
-ENV ANDROID_SDK_DOWNLOAD_URL "https://dl.google.com/android/repository/tools_r25.2.5-linux.zip"
-ENV ANDROID_SETUP_APIS "23 25"
-ENV ANDROID_BUILD_TOOLS_VERSION 25
+ENV ANDROID_NDK_DOWNLOAD_URL "https://dl.google.com/android/repository/android-ndk-r21-linux-x86_64.zip"
+ENV ANDROID_SDK_DOWNLOAD_URL "https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip"
+ENV ANDROID_SETUP_APIS "23 28"
+ENV ANDROID_BUILD_TOOLS_VERSION 28
 ENV ANDROID_TARGET_API 23
 
 ENV PJSIP_DOWNLOAD_URL "https://github.com/pjsip/pjproject/archive/refs/tags/2.12.tar.gz"
